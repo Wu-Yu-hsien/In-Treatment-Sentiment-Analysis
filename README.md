@@ -39,12 +39,14 @@ Each sentence was scored independently by all three tools, with values normalize
 
 ## Folder Structure
 
+```
 In-Treatment-Sentiment-Analysis/
-├── data/ # Cleaned subtitle transcripts with speaker labels
-├── code/ # Jupyter notebooks for analysis and chart generation
-├── images/ # Original visualization, Diagrams, tool comparisons
-├── visualization/ # Exported HTML visualizations
-├── README.md # Project documentation
+├── data/             # Cleaned subtitle transcripts with speaker labels
+├── code/             # Jupyter notebooks for analysis and chart generation
+├── images/           # Original visualization, diagrams, tool comparisons
+├── visualization/    # Exported HTML visualizations
+├── README.md         # Project documentation
+```
 
 
 ## How to Reproduce
@@ -77,6 +79,6 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "path_to_your_api_key.json"
 ⚠️ Note: Google Cloud offers 5,000 free requests per month.
 TextBlob and VADER can be used immediately without any setup.
 
-Feedback & Contact
+## Feedback & Contact
 Feel free to open an issue or fork this repo if you'd like to build on it.
 If you have suggestions, questions, or want to discuss dialogue-based sentiment analysis, feel free to reach out via email: ad0911597689@gmail.com 
