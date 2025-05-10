@@ -76,8 +76,10 @@ Enable the Natural Language API
 Generate a service account key (JSON format)
 
 Set your API credentials in your script:
+```
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "path_to_your_api_key.json"
+```
 ⚠️ Note: Google Cloud offers 5,000 free requests per month.
 TextBlob and VADER can be used immediately without any setup.
 
