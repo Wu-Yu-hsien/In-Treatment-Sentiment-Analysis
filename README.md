@@ -1,43 +1,82 @@
-# In-Treatment-Sentiment-Analysis
+# In-Treatment Sentiment Analysis
 
-## Overview
+## Project Overview
 
-In psychotherapy, therapists often rely on subjective judgment to interpret a patient’s emotional state. There is a lack of objective tools to support this process, especially when analyzing how a patient’s mood evolves over time. This project explores how natural language processing (NLP) techniques can be used to analyze therapy dialogues and visually track emotional shifts.
+This project explores how Natural Language Processing (NLP) can be used to analyze emotional shifts in psychotherapy conversations. Drawing from the HBO series *In Treatment*, the project visualizes the sentiment trajectory of a patient—Laura—across six therapy sessions, using three different sentiment analysis tools:
 
-Due to the sensitive nature of real clinical data, this project uses subtitles from the HBO series *In Treatment*, where each episode consists of a therapy session between a psychologist and a patient. I focus on the character Laura across Sessions 1–6.
+- **TextBlob** (lexicon-based)
+- **VADER** (rule-based)
+- **Google Cloud Natural Language API** (machine learning-based)
 
-By applying sentiment analysis, I was able to generate visualizations that reveal emotional trends and turning points throughout the sessions. These visual tools allow us to zoom in on specific emotional spikes—both positive and negative—and identify the topics or interactions that may have triggered them.
+The result is an interactive, multi-panel line chart that allows users to explore how these tools interpret emotional tone throughout the therapy dialogues.
 
----
+> 💡 This project demonstrates how NLP tools might support therapists or clients in identifying emotional turning points or patterns over time.
 
-## Project Contents
-This project analyzes therapy dialogue from the HBO series *In Treatment*, focusing on the patient Laura during Sessions 1–6. Using TextBlob for sentiment analysis, I explore how her emotional tone changes over time and across sessions.
+## Why *In Treatment*?
 
-- `code/`: Jupyter notebooks for individual session and multi-session sentiment analysis
-- `data/`: Cleaned dialogue transcripts for Sessions 1–6 (`.xlsx` format)
-- `visualization/`: Exported charts including line plots, subplots, and heatmaps
+Due to privacy and ethical concerns around using real clinical transcripts, this project uses data from *In Treatment*, where each episode closely simulates a real therapy session. All dialogue was sourced from subtitle files and manually labeled with speaker roles.
+
+## Sentiment Tools
+
+Each tool brings different strengths:
+
+- **TextBlob**: Assigns sentence-level sentiment scores by averaging word-level polarity values.
+- **VADER**: Incorporates rule-based adjustments for emphasis, punctuation, and informal language.
+- **Google Cloud NLP**: Uses a deep learning model to assess sentence sentiment within broader context.
+
+Each sentence was scored independently by all three tools, with values normalized between -1 (very negative) and +1 (very positive).
+
+## Key Features
+
+- 🧠 Compare three sentiment models across six therapy sessions  
+- 📈 Visualize emotional trends of both therapist (Paul) and patient (Laura)  
+- 🔍 Hover to view full dialogue and sentiment score  
+- 📊 Zoom, filter, and isolate any line using the interactive legend  
+
+## Live Demo
+
+👉 [Explore the interactive chart](https://wu-yu-hsien.github.io/In-Treatment-Sentiment-Analysis/textblob_vader_google_with_tips.html)
+
+## Folder Structure
+
+In-Treatment-Sentiment-Analysis/
+├── data/ # Cleaned subtitle transcripts with speaker labels
+├── code/ # Jupyter notebooks for analysis and chart generation
+├── images/ # Original visualization, Diagrams, tool comparisons
+├── visualization/ # Exported HTML visualizations
+├── README.md # Project documentation
 
 
-##  Key Visualizations
+## How to Reproduce
 
-- **session1 draft** – Tracks Laura's emotional tone within the first session
-- **session1-6** – Shows sentiment trends across sessions in one view
-- **Heatmap across sessions** – Highlights emotional intensity over utterances for each session
+1. Clone this repository  
+2. Place all CSV or Excel subtitle files in the `data/` folder  
+3. Open the Jupyter notebooks in the `code/` folder  
+4. Update any file paths if needed  
+5. Run the notebook to reproduce the visualization  
 
-##  How to Reproduce
-1. Clone or download this repository
-2. Ensure all `.xlsx` data files are placed inside the `data/` folder
-3. Open the Jupyter notebooks in the `code/` folder
-4.  **Before running any notebook**, make sure the file path is set correctly
+## Required Python Packages
+1.pandas
+2.plotly
+3.textblob
+4.vaderSentiment
+5.google-cloud-language
+6.openpyxl
+7.tqdm
 
+## To use Google Cloud NLP:
+Create a Google Cloud project
 
-##  Required Packages
-To run the analysis notebooks, you’ll need the following Python packages:
-- pandas
-- matplotlib
-- seaborn
-- textblob
-- openpyxl (for reading Excel files)
+Enable the Natural Language API
 
-## Feedback or Questions?
-Feel free to open an issue or reach out if you have suggestions, questions, or want to discuss dialogue-based sentiment analysis.
+Generate a service account key (JSON format)
+
+Set your API credentials in your script:
+import os
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "path_to_your_api_key.json"
+⚠️ Note: Google Cloud offers 5,000 free requests per month.
+TextBlob and VADER can be used immediately without any setup.
+
+Feedback & Contact
+Feel free to open an issue or fork this repo if you'd like to build on it.
+If you have suggestions, questions, or want to discuss dialogue-based sentiment analysis, feel free to reach out via email: ad0911597689@gmail.com 
