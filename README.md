@@ -58,6 +58,7 @@ In-Treatment-Sentiment-Analysis/
 5. Run the notebook to reproduce the visualization  
 
 ## Required Python Packages
+```
 1.pandas
 2.plotly
 3.textblob
@@ -65,8 +66,9 @@ In-Treatment-Sentiment-Analysis/
 5.google-cloud-language
 6.openpyxl
 7.tqdm
+```
 
-## To use Google Cloud NLP:
+## To use Google Cloud NLP
 Create a Google Cloud project
 
 Enable the Natural Language API
