@@ -1,4 +1,4 @@
-# In-Treatment Sentiment Analysis
+# Sentiment Analysis of Psychotherapy Dialogues
 
 ## Project Overview
 
