@@ -41,11 +41,23 @@ Each sentence was scored independently by all three tools, with values normalize
 
 ```
 In-Treatment-Sentiment-Analysis/
-├── data/             # Cleaned subtitle transcripts with speaker labels
-├── code/             # Jupyter notebooks for analysis and chart generation
-├── images/           # Original visualization, diagrams, tool comparisons
-├── visualization/    # Exported HTML visualizations
-├── README.md         # Project documentation
+├── code/               # All analysis notebooks
+│   ├── In_treatment_session1_sentiment.ipynb         # Early analysis using TextBlob only (used for session1 draft.png)
+│   ├── Compare_sentiment_sessions1to6.ipynb          # Mid-stage: sentiment comparison across sessions 1–6
+│   └── generate_sentiment_visualization.ipynb        # Final: generates interactive visualization (Plotly + 3 models)
+│
+├── data/               # Original + sentiment-scored transcript files
+│   ├── In_Treatment_Session 1–6.xlsx                 # Raw subtitle transcripts with timestamps and speakers
+│   └── session_1–6_with_sentiment.csv                # Processed transcripts with sentiment scores from 3 models
+│
+├── visualization/      # Static charts generated from earlier stages
+│   ├── session1 draft.png                            # Sentiment line chart of Session 1 (TextBlob only)
+│   └── session1-6.png                                # Multi-session static sentiment comparison
+│
+├── docs/               # GitHub Pages live site content
+│   └── textblob_vader_google_with_tips.html          # Final interactive visualization hosted via GitHub Pages
+│
+├── README.md           # Project overview and documentation
 ```
 
 
